@@ -48,7 +48,7 @@
                                         <tr>
                                             <td><?= $no++; ?></td>
                                             <td class="align-middle">
-                                                <p class="m-0"><a href="<?= $row['id_penyakit']; ?>" class="h6 action-edit"><?= $row['nama_penyakit']; ?></a></p>
+                                                <p class="m-0"><a data-toggle="modal" data-target="#ModalDetailFix<?= $row['id_penyakit']; ?>" class="h6 action-edit"><?= $row['nama_penyakit']; ?></a></p>
                                                 <p class="m-0">
                                                     <a data-toggle="modal" data-target="#ModalEditFix<?= $row['id_penyakit']; ?>" class="text-small text-danger">Edit</a> |
                                                     <!-- <a href="<? // base_url('admin/artikelpenyakit/') . $row['id_penyakit']; 
@@ -100,7 +100,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="namaPenyakitAdd">Nama Penyakit</label>
-                        <input id="namaPenyakitAdd" type="text" class="form-control" name="nama_penyakit" placeholder="nama penyakit baru" required>
+                        <input type="text" class="form-control" name="nama_penyakit" placeholder="nama penyakit baru" required>
                     </div>
                     <!-- <div class="form-group">
                         <label for="deskripsiAdd">Deskripsi</label>
@@ -112,11 +112,11 @@
                     </div> -->
                     <div class="form-group">
                         <label for="penyakitArtikel">Deskripsi Penyakit</label>
-                        <textarea id="penyakitArtikel" cols="30" rows="5" class="form-control" name="deskripsi_penyakit" placeholder="masukkan deskripsi tentang penyakit disini"></textarea>
+                        <textarea cols="30" rows="5" class="form-control" name="deskripsi_penyakit" placeholder="masukkan deskripsi tentang penyakit disini"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="penyakitSaranArtikel">Saran Penyakit</label>
-                        <textarea id="penyakitSaranArtikel" cols="30" rows="5" class="form-control" name="saran_penyakit" placeholder="masukkan saran tentang penyakit disini"></textarea>
+                        <textarea cols="30" rows="5" class="form-control" name="saran_penyakit" placeholder="masukkan saran tentang penyakit disini"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="customFile">Choose Image</label>
@@ -177,6 +177,54 @@
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         <!-- <input type="submit" name="submit-type" class="btn btn-primary" value="Tambah"> -->
                         <button type="submit" class="btn btn-primary btn-flat">Update</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </form>
+    </div>
+<?php endforeach; ?>
+
+<!-- Modal Detail  -->
+<?php foreach ($penyakit as $row) : ?>
+    <div class="modal fade" id="ModalDetailFix<?= $row['id_penyakit']; ?>">
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Detail Penyakit</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="namaPenyakitAdd">Nama Penyakit</label>
+                            <input type="text" class="form-control" name="nama_penyakit" value="<?= $row['nama_penyakit'] ?>" placeholder="nama penyakit baru" readonly required>
+                        </div>
+                        <div class="form-group">
+                            <label for="penyakitArtikel">Deskripsi Penyakit</label>
+                            <textarea cols="30" rows="5" class="form-control" name="deskripsi_penyakit" readonly placeholder="masukkan deskripsi tentang penyakit disini"><?= $row['deskripsi_penyakit'] ?></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="penyakitSaranArtikel">Saran Penyakit</label>
+                            <textarea cols="30" rows="5" class="form-control" name="saran_penyakit" readonly placeholder="masukkan saran tentang penyakit disini"><?= $row['saran_penyakit'] ?></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="customFile">Detail Gambar</label>
+                            <br>
+                            <img width="150px" height="100px" src="<?= base_url('assets/img/penyakit/') . $row['gambar_penyakit']; ?>" alt="penyakit">
+                            <!-- <div class="custom-file">
+                                <input type="file" class="custom-file-input" name="gambar_penyakit">
+                                <label class="custom-file-label" for="customFile">Choose file</label>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+                        <!-- <input type="submit" name="submit-type" class="btn btn-primary" value="Tambah"> -->
+                        <!-- <button type="submit" class="btn btn-primary btn-flat">Update</button> -->
                     </div>
                 </div>
                 <!-- /.modal-content -->

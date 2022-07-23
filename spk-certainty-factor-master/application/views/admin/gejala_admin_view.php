@@ -37,7 +37,7 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Nama Gejala</th>                                        
+                                        <th>Nama Gejala</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -48,19 +48,19 @@
                                         <tr>
                                             <td class="align-middle"><?= $no++; ?></td>
                                             <td class="align-middle">
-                                                <p class="m-0"><a href="<?= $row['id_gejala']; ?>" class="h6 action-edit"><?= $row['nama_gejala']; ?></a></p>
+                                                <p class="m-0"><a class="h6 action-edit"><?= $row['nama_gejala']; ?></a></p>
                                                 <p class="m-0">
-                                                    <a href="<?= $row['id_gejala']; ?>" class="text-small text-danger action-edit">Edit</a> |
+                                                    <a data-toggle="modal" data-target="#ModalEditFix<?= $row['id_gejala']; ?>" class="text-small text-danger">Edit</a> ||
                                                     <a href="<?= base_url('admin/deletegejala/') . $row['id_gejala']; ?>" class="text-small text-danger action-delete">Hapus</a>
                                                 </p>
-                                            </td>                                            
+                                            </td>
                                         </tr>
                                     <?php endforeach; ?>
                                 </tbody>
                                 <tfoot>
                                     <tr>
                                         <th>No</th>
-                                        <th>Nama Gejala</th>                                        
+                                        <th>Nama Gejala</th>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -93,7 +93,7 @@
                     <div class="form-group">
                         <label for="namaGejalaAdd">Nama Gejala</label>
                         <input id="namaGejalaAdd" type="text" class="form-control" name="nama_gejala" placeholder="Nama gejala baru" required>
-                    </div>                    
+                    </div>
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -105,6 +105,66 @@
         <!-- /.modal-dialog -->
     </form>
 </div>
+
+<!-- Modal Edit Gejala -->
+<?php foreach ($gejala as $row) : ?>
+    <div class="modal fade" id="ModalEditFix<?= $row['id_gejala']; ?>">
+        <form action="<?= base_url('Admin/EditGejalaFix/') . $row['id_gejala']; ?>" method="post" enctype="multipart/form-data">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Edit Gejala</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="namaGejalaAdd">Nama Gejala</label>
+                            <input type="text" class="form-control" name="nama_gejala" value="<?= $row['nama_gejala']; ?>" placeholder="Nama gejala baru" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <input type="submit" name="submit-type" class="btn btn-primary" value="Update">
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </form>
+    </div>
+<?php endforeach ?>
+
+<!-- Modal Detail Gejala -->
+<?php foreach ($gejala as $row) : ?>
+    <div class="modal fade" id="ModalDetailFix<?= $row['id_gejala']; ?>">
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Detail Gejala</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="namaGejalaAdd">Nama Gejala</label>
+                            <input readonly type="text" class="form-control" name="nama_gejala" value="<?= $row['nama_gejala']; ?>" placeholder="Nama gejala baru" required>
+                        </div>
+                    </div>
+                    <!-- <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <input type="submit" name="submit-type" class="btn btn-primary" value="Update">
+                    </div> -->
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </form>
+    </div>
+<?php endforeach ?>
 
 <div class="modal fade" id="edit-modal">
     <form action="" method="post" autocomplete="off" enctype="multipart/form-data">

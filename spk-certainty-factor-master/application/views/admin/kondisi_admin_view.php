@@ -51,7 +51,7 @@
                                             <td class="align-middle">
                                                 <p class="m-0"><a href="<?= $row['id_kondisi']; ?>" class="h6 action-edit"><?= $row['nama_kondisi']; ?></a></p>
                                                 <p class="m-0">
-                                                    <a href="<?= $row['id_kondisi']; ?>" class="text-small text-danger action-edit">Edit</a> |
+                                                    <a data-toggle="modal" data-target="#ModalEditFix<?= $row['id_kondisi']; ?>" class="text-small text-danger action-edit">Edit</a> |
                                                     <a href="<?= base_url('admin/deletekondisi/') . $row['id_kondisi']; ?>" class="text-small text-danger action-delete">Hapus</a>
                                                 </p>
                                             </td>
@@ -112,6 +112,40 @@
         <!-- /.modal-dialog -->
     </form>
 </div>
+
+<!-- Modal Edit Kondisi -->
+<?php foreach ($kondisi as $row) : ?>
+    <div class="modal fade" id="ModalEditFix<?= $row['id_kondisi']; ?>">
+        <form action="<?= base_url('Admin/EditKondisiFix/') . $row['id_kondisi'] ?>" method="post" enctype="multipart/form-data">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Edit Kondisi</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="namaKondisiAdd">Nama Kondisi</label>
+                            <input type="text" class="form-control" name="nama_kondisi" value="<?= $row['nama_kondisi']; ?>" placeholder="nama kondisi baru" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cf_kondisiAdd">Bobot</label>
+                            <input type="number" step="0.1" class="form-control" name="cf_kondisi" value="<?= $row['cf_kondisi']; ?>" placeholder="bobot dalam decimal (contoh: 1.0, 0.4, dst)" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <input type="submit" name="submit-type" class="btn btn-primary" value="Update">
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </form>
+    </div>
+<?php endforeach ?>
 
 <div class="modal fade" id="edit-modal">
     <form action="" method="post" autocomplete="off" enctype="multipart/form-data">

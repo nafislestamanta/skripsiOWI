@@ -38,14 +38,20 @@ class Pengetahuan_model extends CI_Model
         }
     }
 
+    public function updatePengetahuanFix($data, $id)
+    {
+        return $this->db->where('id_basis_pengetahuan', $id)->update('tb_basis_pengetahuan', $data);
+    }
+
     public function deletePengetahuan($tipe, $param = 'id_basis_pengetahuan')
     {
         if ($tipe == 'id_basis_pengetahuan') {
-            return $this->db->delete('tb_basis_pengetahuan', ['id_basis_pengetahuan' => $param]);        
+            return $this->db->delete('tb_basis_pengetahuan', ['id_basis_pengetahuan' => $param]);
         }
     }
 
-    public function countPengetahuan($tipe, $param = NULL) {
+    public function countPengetahuan($tipe, $param = NULL)
+    {
         if ($tipe == 'all') {
             return $this->db->count_all_results('tb_basis_pengetahuan');
         }

@@ -32,14 +32,14 @@
             </a>
           </li>
 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="<?= base_url('admin/pengguna'); ?>" class="nav-link <?= $menu == 'pengguna' ? 'active' : '' ?>">
               <i class="nav-icon fas fa-users"></i>
               <p>
                 Pengguna
               </p>
             </a>
-          </li>
+          </li> -->
 
           <li class="nav-item">
             <a href="<?= base_url('admin/penyakit'); ?>" class="nav-link <?= $menu == 'penyakit' ? 'active' : '' ?>">

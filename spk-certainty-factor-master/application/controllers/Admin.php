@@ -436,6 +436,25 @@ class Admin extends CI_Controller
         $this->load->view('admin/ajax/edit_gejala_form', $data);
     }
 
+    public function EditGejalaFix($id)
+    {
+        $nama_gejala = $this->input->post('nama_gejala');
+
+        $data = [
+            'nama_gejala' => $nama_gejala
+        ];
+
+        $update = $this->Gejala_model->updateGejalaFix($data, $id);
+
+        if ($update) {
+            $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Berhasil merubah data</div>');
+            redirect('Admin/Gejala');
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Gagal merubah data</div>');
+            redirect('Admin/Gejala');
+        }
+    }
+
     // * untuk menghapus gejala
     public function deleteGejala($id_gejala)
     {
@@ -530,6 +549,29 @@ class Admin extends CI_Controller
         $data['gejala'] = $this->Gejala_model->getGejala('all');
 
         $this->load->view('admin/ajax/edit_pengetahuan_form', $data);
+    }
+
+    public function EditPengetahuanFix($id)
+    {
+        $id_penyakit = $this->input->post('id_penyakit');
+        $id_gejala = $this->input->post('id_gejala');
+        $cf_pakar = $this->input->post('cf_pakar');
+
+        $data = [
+            'id_penyakit' => $id_penyakit,
+            'id_gejala' => $id_gejala,
+            'cf_pakar' => $cf_pakar,
+        ];
+
+        $update = $this->Pengetahuan_model->updatePengetahuanFix($data, $id);
+
+        if ($update) {
+            $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Berhasil merubah data</div>');
+            redirect('Admin/Pengetahuan');
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Gagal merubah data</div>');
+            redirect('Admin/Pengetahuan');
+        }
     }
 
     // * untuk menghapus pengetahuan
@@ -651,6 +693,27 @@ class Admin extends CI_Controller
         $data['kondisi'] = $this->Kondisi_model->getKondisi('id_kondisi', $id_kondisi);
 
         $this->load->view('admin/ajax/edit_kondisi_form', $data);
+    }
+
+    public function EditKondisiFix($id)
+    {
+        $nama_kondisi = $this->input->post('nama_kondisi');
+        $cf_kondisi = $this->input->post('cf_kondisi');
+
+        $data = [
+            'nama_kondisi' => $nama_kondisi,
+            'cf_kondisi' => $cf_kondisi
+        ];
+
+        $update = $this->Kondisi_model->updateKondisiFix($data, $id);
+
+        if ($update) {
+            $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Berhasil merubah data</div>');
+            redirect('Admin/Kondisi');
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Gagal merubah data</div>');
+            redirect('Admin/Kondisi');
+        }
     }
 
     // * untuk menghapus kondisi

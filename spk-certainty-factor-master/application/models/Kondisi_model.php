@@ -32,10 +32,15 @@ class Kondisi_model extends CI_Model
         }
     }
 
+    public function updateKondisiFix($data, $id)
+    {
+        return $this->db->where('id_kondisi', $id)->update('tb_kondisi', $data);
+    }
+
     public function deleteKondisi($tipe, $param = 'id_kondisi')
     {
         if ($tipe == 'id_kondisi') {
-            return $this->db->delete('tb_kondisi', ['id_kondisi' => $param]);        
+            return $this->db->delete('tb_kondisi', ['id_kondisi' => $param]);
         }
     }
 }

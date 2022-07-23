@@ -32,20 +32,27 @@ class Gejala_model extends CI_Model
         }
     }
 
+    public function updateGejalaFix($data, $id)
+    {
+        return $this->db->where('id_gejala', $id)->update('tb_gejala', $data);
+    }
+
     public function deleteGejala($tipe, $param = 'id_gejala')
     {
         if ($tipe == 'id_gejala') {
-            return $this->db->delete('tb_gejala', ['id_gejala' => $param]);        
+            return $this->db->delete('tb_gejala', ['id_gejala' => $param]);
         }
     }
 
-    public function countGejala($tipe, $param = NULL) {
+    public function countGejala($tipe, $param = NULL)
+    {
         if ($tipe == 'all') {
             return $this->db->count_all_results('tb_gejala');
         }
     }
 
-    public function getHasilGejala($list_gejala) {
+    public function getHasilGejala($list_gejala)
+    {
         $this->load->model('Kondisi_model');
 
         $array_hasil_gejala = array();
@@ -55,8 +62,8 @@ class Gejala_model extends CI_Model
             $kondisi_temp = $this->Kondisi_model->getKondisi('id_kondisi', $id_kondisi);
             $gejala = array(
                 'id_gejala' => $gejala_temp['id_gejala'],
-                'nama_gejala' => $gejala_temp['nama_gejala'],                
-                'nama_kondisi' => $kondisi_temp['nama_kondisi'],                
+                'nama_gejala' => $gejala_temp['nama_gejala'],
+                'nama_kondisi' => $kondisi_temp['nama_kondisi'],
             );
 
             // * menambahkan gejala ke array gejala
