@@ -121,7 +121,7 @@
                     <div class="form-group">
                         <label for="customFile">Choose Image</label>
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="penyakitImage" accept="image/x-png,image/gif,image/jpeg,image/jpg" name="gambar_penyakit" required>
+                            <input type="file" class="custom-file-input" id="penyakitImage" accept="image/png,image/gif,image/jpeg,image/jpg" name="gambar_penyakit" required>
                             <label class="custom-file-label" for="customFile">Choose file</label>
                             <img style="object-fit: cover; height: 100px; width: 150px;" width="150px" height="100px" src="" alt="penyakit" id="penyakitPreview" class="img-fluid mt-2 d-none">
                         </div>
@@ -214,7 +214,7 @@
                         <div class="form-group">
                             <label for="customFile">Detail Gambar</label>
                             <br>
-                            <img width="150px" height="100px" src="<?= base_url('assets/img/penyakit/') . $row['gambar_penyakit']; ?>" alt="penyakit">
+                            <img width="300px" height="300px" src="<?= base_url('assets/img/penyakit/') . $row['gambar_penyakit']; ?>" alt="penyakit">
                             <!-- <div class="custom-file">
                                 <input type="file" class="custom-file-input" name="gambar_penyakit">
                                 <label class="custom-file-label" for="customFile">Choose file</label>
