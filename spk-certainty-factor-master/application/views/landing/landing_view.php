@@ -53,15 +53,14 @@
 
                         </ul> -->
                         <ul>
-                            <li><i class="ri-check-double-line"></i> Gejala beberapa jenis jerawat</li>
-                            <li><i class="ri-check-double-line"></i> identifikasi jenis jerawat</li>
-                            <li><i class="ri-check-double-line"></i> Saran yang harus dilakukan jika terkena jerawat tersebut</li>
+                            <li><i class="ri-check-double-line"></i> Aspek gejala kecanduan game online</li>
+                            <li><i class="ri-check-double-line"></i> Identifikasi jenis aspek yang dialami</li>
+                            <li><i class="ri-check-double-line"></i> Saran yang harus dilakukan jika mengalami aspek tersebut</li>
                         </ul>
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0">
                         <p>
-                            Pakar yang menjadi sumber pengetahuan sudah lama berpengalaman di bidang kesehatan kulit. Dan sudah melakukan praktek di Personal Beauty Aesthic Clinic.
-                        </p>
+                            Pakar yang menjadi sumber pengetahuan sudah lama berpengalaman di bidang kecanduan yang menjadi staff di Rumah Sakit Jiwa Dr. Radjiman Wediodiningrat Lawang, Malang.
                     </div>
                 </div>
 
@@ -87,7 +86,7 @@
 
                 <div class="section-title">
                     <h2>Info Penyakit</h2>
-                    <h3>Informasi Penyakit Kecanduan <span>Game Online</span></h3>
+                    <h3>Informasi Aspek Penyakit Kecanduan <span>Game Online</span> Pada Pelajar</h3>
                     <p>Informasi yang dibuat untuk melihat macam macam penyakit dari efek kecanduan game online</p>
                 </div>
 
