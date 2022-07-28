@@ -161,7 +161,7 @@ class Diagnosa extends CI_Controller
                 'nama' => $nama,
                 'usia' => $usia,
                 'jenis_kelamin' => $jenis_kelamin,
-                'alamat' => $alamat,
+                'asal_sekolah' => $alamat,
             );
 
 
@@ -196,7 +196,7 @@ class Diagnosa extends CI_Controller
                     'nama' => $nama,
                     'usia' => $usia,
                     'jenis_kelamin' => $jenis_kelamin,
-                    'alamat' => $alamat,
+                    'asal_sekolah' => $alamat,
                     'hasil_created' => time()
                 );
 
@@ -230,7 +230,7 @@ class Diagnosa extends CI_Controller
             'nama' => $hasil['nama'],
             'usia' => $hasil['usia'],
             'jenis_kelamin' => $hasil['jenis_kelamin'],
-            'alamat' => $hasil['alamat'],
+            'asal_sekolah' => $hasil['asal_sekolah'],
         );
 
         $this->load->view('template/landing/landing_header_view', $data);

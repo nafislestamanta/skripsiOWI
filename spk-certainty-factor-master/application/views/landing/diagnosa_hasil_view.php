@@ -52,7 +52,7 @@
                                 <li><span class="font-weight-bold">Nama :</span> <?= $identitas['nama'] ?></li>
                                 <li><span class="font-weight-bold">Usia :</span> <?= $identitas['usia'] ?></li>
                                 <li><span class="font-weight-bold">Jenis Kelamin :</span> <?= $identitas['jenis_kelamin'] ?></li>
-                                <li><span class="font-weight-bold">Alamat :</span> <?= $identitas['alamat'] ?></li>
+                                <li><span class="font-weight-bold">Asal Sekolah :</span> <?= $identitas['asal_sekolah'] ?></li>
                             </ul>
 
                             <div class="col-12 table-responsive p-0">

@@ -103,7 +103,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="col form-group">
-                                            <textarea name="alamat" id="alamat" type="text" class="form-control" placeholder="Alamat lengkap*" rows="5" required></textarea>
+                                            <!-- <textarea name="alamat" id="alamat" type="text" class="form-control" placeholder="Alamat lengkap*" rows="5" required></textarea> -->
+                                            <input name="alamat" type="text" id="alamat" class="form-control" placeholder="Asal Sekolah*" required>
                                         </div>
                                     </div>
                                     <button type="button" class="btn btn-primary float-right" id="next-button">Selanjutnya</button>
