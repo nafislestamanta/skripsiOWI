@@ -50,7 +50,7 @@
                         <div class="entry-content">
                             <div class="alert alert-info">
                                 <h5><i class="icon fas fa-info"></i> Perhatian!</h5>
-                                Silahkan memilih gejala sesuai dengan kondisi anda, anda dapat memilih kepastian kondisi dari pasti tidak sampai pasti ya, jika sudah tekan tombol proses (diagnosa) di bawah untuk melihat hasil.
+                                Sebelum melakukan diagnosa, data diri yang diisi merupakan data diri anak anda.
                             </div>
                         </div>
 

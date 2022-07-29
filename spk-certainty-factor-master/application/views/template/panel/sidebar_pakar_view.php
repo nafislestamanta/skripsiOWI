@@ -50,14 +50,14 @@
             </a>
           </li>
 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="<?= base_url('pakar/kondisi'); ?>" class="nav-link <?= $menu == 'kondisi_pakar' ? 'active' : '' ?>">
               <i class="nav-icon fas fa-list-ol"></i>
               <p>
                 Kondisi
               </p>
             </a>
-          </li>
+          </li> -->
 
           <li class="nav-item">
             <a href="<?= base_url('pakar/pengetahuan'); ?>" class="nav-link <?= $menu == 'pengetahuan_pakar' ? 'active' : '' ?>">
